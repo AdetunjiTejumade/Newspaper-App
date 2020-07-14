@@ -39,8 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # my apps
-    'users.apps.UsersConfig'
+    'users.apps.UsersConfig',
+    'articles.apps.ArticlesConfig'
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
