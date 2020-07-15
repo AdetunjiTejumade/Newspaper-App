@@ -8,7 +8,7 @@ Articles
 
 {% for article in articles %}
 
-<p>{{ article.title }}</p>
+<p><a href="{% url 'article_detail' article.pk %}">{{ article.title }}</a></p>
 
 <p>{{ article.author }}</p>
 <p>{{ article.date}}</p>
@@ -16,5 +16,8 @@ Articles
     <p>{{ article.body }}</p>
 </div>
 
+<a href="{% url 'article_update' article.pk %}">Edit</a>
+<a href="{% url 'article_delete' article.pk %}">Delete</a>
+<hr>
 {% endfor %}
 {% endblock content %}
