@@ -13,8 +13,10 @@
     <p>{{object.body}}</p>
 
     <hr>
-    <a href="{% url 'article_update' article.pk %}">Edit</a>
-    <a href="{% url 'article_delete' article.pk %}">Delete</a>
+    {% if user.is_authenticated %}
+        <a href="{% url 'article_update' article.pk %}">Edit</a>
+        <a href="{% url 'article_delete' article.pk %}">Delete</a>
+    {% endif %}
     <p>Back to<a href="{% url 'article_list' %}"> All Articles</a>.</p>
 {% endblock content %}
     

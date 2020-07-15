@@ -16,8 +16,12 @@ Articles
     <p>{{ article.body }}</p>
 </div>
 
+{% if user.is_authenticated %}
 <a href="{% url 'article_update' article.pk %}">Edit</a>
 <a href="{% url 'article_delete' article.pk %}">Delete</a>
+{% endif %}
+    
+
 <hr>
 {% endfor %}
 {% endblock content %}
